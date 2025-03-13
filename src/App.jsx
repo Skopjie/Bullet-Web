@@ -10,8 +10,19 @@ import Separator from "./components/separator/separator"
 import Loading from "./elements/loading/loading"
 import StatBox from "./elements/stat_box/stat_box"
 import SelectorPagination from "./elements/selector_pagination/selector_pagination"
+import Selector from "./elements/selector/selector"
 
 function App (){
+    const options = [
+        { value: "1", text: "Opción 1" },
+        { value: "2", text: "Opción 2" },
+        { value: "3", text: "Opción 3" },
+    ];
+
+    const handleSelection = (selectedOption) => {
+        console.log("Seleccionaste:", selectedOption);
+    };
+
     const [selected, setSelected] = useState(0);
     useEffect(() => {
         const interval = setInterval(() => {
@@ -25,6 +36,9 @@ function App (){
     return(
         <>
         <Section background="White">
+
+           <Selector options={options} onChange={handleSelection} />
+
             <CustomButton type = "Primary" aspect="Outline">
                 Prueba de boton
             </CustomButton>
