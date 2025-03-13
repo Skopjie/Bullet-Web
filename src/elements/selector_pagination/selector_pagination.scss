@@ -1,0 +1,21 @@
+.bul-selector-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.bul-selector-pagination-slot {
+    width: 12px; 
+    height: 12px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--c-text-light);
+    transition: all 0.2s ease-in-out;
+}
+
+.bul-selector-pagination-slot-selected {
+    width: 36px !important; 
+    border-radius: 30% !important;
+    background-color: var(--c-primary);
+}

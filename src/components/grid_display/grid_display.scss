@@ -1,0 +1,20 @@
+.bul-grid-display{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-items: stretch;
+
+    > * {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+}
+
+
+@media screen and (max-width: $--s-mobile-width){
+    .bul-grid-display{
+        grid-template-columns: 1fr !important;
+    }
+
+}

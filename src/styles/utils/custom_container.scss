@@ -1,0 +1,208 @@
+@mixin custom-container-styles($theme) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  
+    border-radius: 0.4rem;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+    
+    color: map-get($theme, text-color);
+    background-color: map-get($theme, background-color);
+    border: map-get($theme, border-color) 0.2rem solid;
+    box-shadow: 0px 5px 20px map-get($theme, box-shadow-color);
+    
+    &.bul-button{
+      pointer-events: auto;
+      cursor: pointer;
+    }
+    
+    &.bul-button:hover {
+        color: map-get($theme, hover-text-color);
+        background-color: map-get($theme, hover-background-color) !important;
+        border: map-get($theme, hover-border-color) 0.2rem solid;
+        box-shadow: 0px 5px 15px map-get($theme, hover-box-shadow-color);
+    }
+    @content;
+  }
+  
+  $container-themes: (
+    primary: (
+      text-color: var(--c-text-secondary),
+      background-color: var(--c-primary),
+      border-color: var(--c-primary),
+      box-shadow-color: var(--c-primary-light),
+      hover-text-color: var(--c-text-secondary),
+      hover-background-color: var(--c-primary-dark),
+      hover-border-color: var(--c-primary-dark),
+      hover-box-shadow-color: var(--c-primary-dark),
+    ),
+  
+    primary-outline: (
+      text-color: var(--c-primary),
+      background-color: var(--c-transparent),
+      border-color: var(--c-primary),
+      box-shadow-color: var(--c-primary-light),
+      hover-text-color: var(--c-primary-dark),
+      hover-background-color: var(--c-text-secondary),
+      hover-border-color: var(--c-primary-dark),
+      hover-box-shadow-color: var(--c-primary-dark),
+    ),
+  
+    primary-transparent: (
+      text-color: var(--c-primary),
+      background-color: var(--c-transparent),
+      border-color: var(--c-transparent),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-primary-dark),
+      hover-background-color: var(--c-transparent),
+      hover-border-color: var(--c-transparent),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+  
+    secondary: (
+      text-color: var(--c-text-secondary),
+      background-color: var(--c-secondary),
+      border-color: var(--c-secondary),
+      box-shadow-color: var(--c-secondary-light),
+      hover-text-color: var(--c-text-secondary),
+      hover-background-color: var(--c-secondary-dark),
+      hover-border-color: var(--c-secondary-dark),
+      hover-box-shadow-color: var(--c-secondary-dark)
+    ),
+  
+    secondary-outline: (
+      text-color: var(--c-secondary),
+      background-color: var(--c-transparent),
+      border-color: var(--c-secondary),
+      box-shadow-color: var(--c-secondary-light),
+      hover-text-color: var(--c-secondary-dark),
+      hover-background-color: var(--c-text-secondary),
+      hover-border-color: var(--c-secondary-dark),
+      hover-box-shadow-color: var(--c-secondary-dark)
+    ),
+  
+    secondary-transparent: (
+      text-color: var(--c-secondary),
+      background-color: var(--c-transparent),
+      border-color: var(--c-transparent),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-secondary-dark),
+      hover-background-color: var(--c-transparent),
+      hover-border-color: var(--c-transparent),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+  
+    success: (
+      text-color: var(--c-text-secondary),
+      background-color: var(--c-success),
+      border-color: var(--c-success),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-text-secondary),
+      hover-background-color: var(--c-success-dark),
+      hover-border-color: var(--c-success-dark),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+    success-outline: (
+      text-color: var(--c-success),
+      background-color: var(--c-transparent),
+      border-color: var(--c-success),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-success-dark),
+      hover-background-color: var(--c-text-secondary),
+      hover-border-color: var(--c-success-dark),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+  
+    warning: (
+      text-color: var(--c-text-secondary),
+      background-color: var(--c-warning),
+      border-color: var(--c-warning),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-text-secondary),
+      hover-background-color: var(--c-warning-dark),
+      hover-border-color: var(--c-warning-dark),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+    warning-outline: (
+      text-color: var(--c-warning),
+      background-color: var(--c-transparent),
+      border-color: var(--c-warning),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-warning-dark),
+      hover-background-color: var(--c-text-secondary),
+      hover-border-color: var(--c-warning-dark),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+  
+    error: (
+      text-color: var(--c-text-secondary),
+      background-color: var(--c-error),
+      border-color: var(--c-error),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-text-secondary),
+      hover-background-color: var(--c-error-dark),
+      hover-border-color: var(--c-error-dark),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+    error-outline: (
+      text-color: var(--c-error),
+      background-color: var(--c-transparent),
+      border-color: var(--c-error),
+      box-shadow-color: var(--c-transparent),
+      hover-text-color: var(--c-error-dark),
+      hover-background-color: var(--c-text-secondary),
+      hover-border-color: var(--c-error-dark),
+      hover-box-shadow-color: var(--c-transparent)
+    ),
+  );
+  
+  
+  .container-primary {
+    @include custom-container-styles(map-get($container-themes, primary));
+  }
+  .container-primary-outline {
+    @include custom-container-styles(map-get($container-themes, primary-outline));
+  }
+  .container-primary-transparent {
+    @include custom-container-styles(map-get($container-themes, primary-transparent));
+  }
+  
+  .container-secondary {
+    @include custom-container-styles(map-get($container-themes, secondary));
+  }
+  .container-secondary-outline {
+    @include custom-container-styles(map-get($container-themes, secondary-outline));
+  }
+  .container-secondary-transparent {
+    @include custom-container-styles(map-get($container-themes, secondary-transparent));
+  }
+  
+  .container-success {
+    @include custom-container-styles(map-get($container-themes, success));
+  }
+  .container-success-outline {
+    @include custom-container-styles(map-get($container-themes, success-outline));
+  }
+  
+  .container-warning {
+    @include custom-container-styles(map-get($container-themes, warning));
+  }
+  .container-warning-outline {
+    @include custom-container-styles(map-get($container-themes, warning-outline));
+  }
+  
+  .container-error {
+    @include custom-container-styles(map-get($container-themes, error));
+  }
+  .container-error-outline {
+    @include custom-container-styles(map-get($container-themes, error-outline));
+  }
+  
+  

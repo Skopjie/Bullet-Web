@@ -1,0 +1,25 @@
+.bul-section{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .bul-section-container{
+        width: $--s-desktop-width-container;
+    }
+}
+
+@media screen and (max-width: $--s-tablet-width){
+    .bul-section-container{
+        width: $--s-mobile-width-container !important;
+    }
+}
+
+@media screen and (max-width: $--s-mobile-width){
+    .bul-section-container{
+        width: $--s-mobile-width-container !important;
+    }
+}

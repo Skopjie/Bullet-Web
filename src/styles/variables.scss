@@ -1,0 +1,114 @@
+:root {
+  --c-primary: #7562E0;
+  --c-primary-dark: #{darken(#7562E0, 12%)};
+  --c-primary-light: #{lighten(#7562E0, 12%)};
+
+  --c-secondary: #e5860b;
+  --c-secondary-dark: #{darken(#e5860b, 12%)};
+  --c-secondary-light: #{lighten(#e5860b, 12%)};
+
+  --c-accent: #2172b4;
+  --c-accent-dark: #{darken(#2172b4, 12%)};
+  --c-accent-light: #{lighten(#2172b4, 12%)};
+
+  --c-success: #479626;
+  --c-success-dark: #{darken(#479626, 12%)};
+
+  --c-warning: #aeba06;
+  --c-warning-dark: #{darken(#aeba06, 12%)};
+
+  --c-error: #db1b1b;
+  --c-error-dark: #{darken(#db1b1b, 12%)};
+
+  --c-text-primary: #15191B;
+  --c-text-secondary: #f5f5f5;
+  --c-text-light: #929DA1;
+
+  --c-bg-white: #f8f8f8;
+  --c-bg-gray: #3a3d3e;
+  --c-bg-primary: var(--c-primary-dark);
+  --c-bg-secondary: var(--c-secondary-dark);
+
+  --c-border: #33333315;
+  --c-shadow: #33333343;
+  --c-shadow-hover: #33333363;
+  --c-transparent: #ffffff00;
+
+
+}
+
+$--s-mobile-width-container: 95%;  
+$--s-tablet-width-container: 80%;  
+$--s-desktop-width-container: 90%;  
+
+
+$--s-mobile-width: 375px;  
+$--s-tablet-width: 768px;  
+$--s-desktop-width: 1024px; 
+
+
+
+$font-sizes: (
+  xs: clamp(0.75rem, 2vw, 0.875rem),  // Extra pequeño
+  sm: clamp(0.875rem, 2vw, 1rem),    // Pequeño
+  base: clamp(1rem, 2.5vw, 1.125rem), // Base (normal)
+  lg: clamp(1.125rem, 3vw, 1.25rem), // Grande
+  xl: clamp(1.25rem, 3.5vw, 1.5rem), // Extra grande
+  xxl: clamp(1.5rem, 4vw, 2rem),     // Muy grande
+  xxxl: clamp(2rem, 5vw, 2.5rem)     // Gigante
+);
+
+@mixin font-size($size) {
+  font-size: map-get($font-sizes, $size);
+}
+
+html {
+  font-size: 100%; 
+}
+
+h1 { @include font-size(xxxl); }
+h2 { @include font-size(xxl); }
+h3 { @include font-size(xl); }
+h4 { @include font-size(lg); }
+h5 { @include font-size(base); }
+h6 { @include font-size(sm); }
+
+p, body {
+  @include font-size(base);
+}
+
+small {
+  @include font-size(xs);
+}
+
+
+
+// $font-path: '../../../public/assets/fonts/';
+// @font-face {
+//   font-family: 'UbuntuRegular';
+//   src: url('#{$font-path}Ubuntu-Regular.ttf');
+// }
+// @font-face {
+//   font-family: 'UbuntuBold';
+//   src: url('#{$font-path}Ubuntu-Bold.ttf');
+// }
+// @font-face {
+//   font-family: 'UbuntuItalic';
+//   src: url('#{$font-path}Ubuntu-Italic.ttf');
+// }
+// @font-face {
+//   font-family: 'UbuntuLightItalic';
+//   src: url('#{$font-path}Ubuntu-LightItalic.ttf');
+// }
+// @font-face {
+//   font-family: 'UbuntuBoldItalic';
+//   src: url('#{$font-path}Ubuntu-BoldItalic.ttf');
+// }
+// @font-face {
+//   font-family: 'UbuntuLight';
+//   src: url('#{$font-path}Ubuntu-Light.ttf');
+// }
+// @font-face {
+//   font-family: 'UbuntuMedium';
+//   src: url('#{$font-path}Ubuntu-Medium.ttf');
+// }
