@@ -37,7 +37,7 @@ function App (){
         <>
         <Section background="White">
 
-           <Selector options={options} onChange={handleSelection} />
+           <Selector placeholder="Todas Categorias" options={options} onChange={handleSelection} />
 
             <CustomButton type = "Primary" aspect="Outline">
                 Prueba de boton

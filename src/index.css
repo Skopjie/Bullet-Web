@@ -10,20 +10,20 @@ body {
 
 :root {
   --c-primary: #7562E0;
-  --c-primary-dark: rgb(72.0765957447, 46.8914893617, 213.9085106383);
-  --c-primary-light: rgb(161.9234042553, 149.1085106383, 234.0914893617);
+  --c-primary-dark: #482fd6;
+  --c-primary-light: #a295ea;
   --c-secondary: #e5860b;
-  --c-secondary-dark: rgb(170.605, 99.83, 8.195);
-  --c-secondary-light: rgb(245.43, 162.78, 55.77);
+  --c-secondary-dark: #ab6408;
+  --c-secondary-light: #f5a338;
   --c-accent: #2172b4;
-  --c-accent-dark: rgb(23.5183098592, 81.2450704225, 128.2816901408);
-  --c-accent-light: rgb(55.7323943662, 145.4028169014, 218.4676056338);
+  --c-accent-dark: #185180;
+  --c-accent-light: #3891da;
   --c-success: #479626;
-  --c-success-dark: rgb(47.8872340426, 101.170212766, 25.629787234);
+  --c-success-dark: #30651a;
   --c-warning: #aeba06;
-  --c-warning-dark: rgb(118.5375, 126.7125, 4.0875);
+  --c-warning-dark: #777f04;
   --c-error: #db1b1b;
-  --c-error-dark: rgb(164.5170731707, 20.2829268293, 20.2829268293);
+  --c-error-dark: #a51414;
   --c-text-primary: #15191B;
   --c-text-secondary: #f5f5f5;
   --c-text-light: #929DA1;
@@ -641,13 +641,14 @@ small {
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  height: 1.5rem;
   box-shadow: 0 5px 14px var(--c-shadow);
-  pointer-events: none;
+  margin: 0.3rem 0;
 }
 .bul-selector .bul-selector-options {
   list-style: none;
-  margin-top: 0.3rem;
   border: 1px solid var(--c-text-lighter);
   border-radius: 0.5rem;
   padding: 0.3rem 0.2rem;

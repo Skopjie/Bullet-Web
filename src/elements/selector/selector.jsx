@@ -1,36 +1,62 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Selector({ children, className = "", options = [], onChange = null }) {
+export default function Selector({ className = "", options = [], placeholder = null, onChange = null }) {
+    const [visible, setVisible] = useState(false);
     const [selected, setSelected] = useState(null);
+    const [localOptions, setLocalOptions] = useState([]);
 
     const handleSelect = (opt) => {
         setSelected(opt.value);
+        setVisible(false);
         if (onChange) onChange(opt);
     };
 
+    const handleVisible = () => {
+        setVisible(prev => !prev);
+    };    
+
+    useEffect(() => {
+        setLocalOptions(placeholder ? [{ text: placeholder, value: null }, ...options] : options);
+    }, [options, placeholder]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest(".bul-selector")) {
+                setVisible(false);
+            }
+        };
+        if (visible) {
+            document.addEventListener("click", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [visible]);
+
     return (
         <div className={`bul-selector ${className}`}>
-            <div className='bul-selector-selection'>
-                {/* Que esto sea un input de texto */}
-                <p>Opcion</p>
-                <i class="fa-solid fa-chevron-down"></i>
+
+            <div className='bul-selector-selection' onClick={handleVisible}>
+                <p>{selected !== null ? localOptions.find(opt => opt.value === selected)?.text : placeholder ?? "Seleccione la busqueda"}</p>
+                <i className="fa-solid fa-chevron-down"></i>
             </div>
-            <ul className='bul-selector-options'>
-                <li>Escoge</li>
-                {options.map((opt, index) => (
-                    <li 
-                        key={index} 
-                        data-value={opt.value} 
-                        onClick={() => handleSelect(opt)}
-                        className={`${selected === opt.value ? "bul-selector-selected" : ""}`}
-                        style={{ cursor: "pointer", fontWeight: selected === opt.value ? "bold" : "normal" }}
-                    >
-                        {opt.text}
-                    </li>
-                ))}
-            </ul>
-            {children}
+
+            {visible && (
+                <ul className='bul-selector-options'>
+                    {localOptions.map((opt, index) => (
+                        <li
+                            key={index}
+                            data-value={opt.value}
+                            onClick={() => handleSelect(opt)}
+                            className={`${selected === opt.value ? "bul-selector-selected" : ""}`}
+                            style={{ cursor: "pointer", fontWeight: selected === opt.value ? "bold" : "normal" }}
+                        >
+                            {opt.text}
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }
@@ -44,5 +70,5 @@ Selector.propTypes = {
             text: PropTypes.string.isRequired
         })
     ),
-    children: PropTypes.node,
+    placeholder: PropTypes.string,
 };

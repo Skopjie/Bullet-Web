@@ -8,14 +8,15 @@
         border-radius: 0.5rem;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         cursor: pointer;
+        height: 1.5rem;
         box-shadow: 0 5px 14px var(--c-shadow);
-        pointer-events: none;
+        margin: 0.3rem 0;
     }
     
     .bul-selector-options{
         list-style: none;
-        margin-top: 0.3rem;
         border: 1px solid var( --c-text-lighter);
         border-radius: 0.5rem;
         padding: 0.3rem 0.2rem;
