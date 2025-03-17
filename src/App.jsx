@@ -5,6 +5,7 @@ import CustomButton from "./elements/button/custom_button"
 import Tag from "./elements/tag/tag"
 import Section from "./components/section/section"
 import GridDisplay from "./components/grid_display/grid_display" 
+import LinkedList from "./components/linked_list/linked_list" 
 import Card from "./elements/card/card" 
 import Separator from "./components/separator/separator"
 import Loading from "./elements/loading/loading"
@@ -84,6 +85,24 @@ function App (){
             <h1>Card</h1>
             <p>Texto de la card</p>
         </StatBox>
+        </Section>
+
+
+        <Section background="White">
+            <GridDisplay numberOfColumns={2} gap={2}>
+                <LinkedList>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus? </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus?</p>
+                </LinkedList>
+
+                <LinkedList>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ducimus corporis numquam consequatur tempore labore voluptatum dignissimos modi ipsam ut dolorem neque obcaecati beatae in nostrum, a itaque sunt natus?</p>
+                </LinkedList>
+            </GridDisplay>
         </Section>
 
         <SelectorPagination maxSlotNumber={5} slotSelected={selected} type="Primary" />

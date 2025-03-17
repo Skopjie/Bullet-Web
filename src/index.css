@@ -682,6 +682,7 @@ small {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 2.5rem 0;
 }
 .bul-section .bul-section-container {
   width: 90%;
@@ -756,6 +757,53 @@ small {
   .bul-grid-display {
     grid-template-columns: 1fr !important;
   }
+}
+.bul-linked-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  position: relative;
+}
+.bul-linked-list .bul-linked-list-line {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.bul-linked-list .bul-linked-list-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  transform: translate(0);
+  width: 5px;
+  border-radius: 5px;
+  height: 100%;
+  background-color: #7562e0;
+  background: linear-gradient(to bottom, #7562e0, rgba(51, 51, 51, 0.0823529412));
+  z-index: 0;
+}
+.bul-linked-list .bul-linked-list-line .bul-linked-list-element {
+  display: flex;
+  gap: 0.4rem;
+  z-index: 1;
+  position: relative;
+}
+.bul-linked-list .bul-linked-list-line .bul-linked-list-element .bul-linked-list-element-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--c-primary);
+  background-color: white;
+  padding: 0.4rem;
+  width: 35px;
+  height: 35px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=index.css.map */
