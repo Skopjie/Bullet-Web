@@ -12,9 +12,8 @@
 }
 
 
-@media screen and (max-width: $--s-mobile-width){
-    .bul-grid-display{
+@media screen and (max-width: $--s-tablet-width) {
+    .bul-grid-display {
         grid-template-columns: 1fr !important;
     }
-
 }

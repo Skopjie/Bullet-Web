@@ -16,5 +16,5 @@ export default function Section({ children, className = "", background = "White"
 Section.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    background: PropTypes.oneOf(["White", "Gray", "Primary", "Secondary"]),
+    background: PropTypes.oneOf(["White", "Gray", "Primary", "Secondary", "Transparent"]),
 };

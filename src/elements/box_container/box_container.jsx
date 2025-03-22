@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {getContainerTypeClass } from '../../utils/class_selector_utils';
 
-export default function StatBox({children, className = "", width = 1, type = "Primary", aspect="Normal"}) {
+export default function BoxContainer({children, className = "", width = 1, type = "Primary", aspect="Normal"}) {
     const boxWidth = `${width}rem`;
     
     return (
@@ -11,9 +11,9 @@ export default function StatBox({children, className = "", width = 1, type = "Pr
     );
 }
 
-StatBox.PropTypes = {
+BoxContainer.PropTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
     width: PropTypes.number,
-    background: PropTypes.oneOf(["White", "Gray", "Primary", "Secondary"]),
+    background: PropTypes.oneOf(["White", "Gray", "Primary", "Secondary", "Transparent"]),
 };

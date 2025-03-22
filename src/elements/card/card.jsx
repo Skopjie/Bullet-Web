@@ -15,7 +15,7 @@ export default function Card({children, className = "", background = "White", te
 
 Card.propTypes = {
     className: PropTypes.string,
-    background: PropTypes.oneOf(["White", "Gray", "Primary", "Secondary"]),
+    background: PropTypes.oneOf(["White", "Gray", "Primary", "Secondary", "Transparent"]),
     textAlign: PropTypes.oneOf(["Center", "Left", "Right"]),
     selectable: PropTypes.bool,
     children: PropTypes.node,

@@ -8,7 +8,7 @@ import GridDisplay from "./components/grid_display/grid_display"
 import Card from "./elements/card/card" 
 import Separator from "./components/separator/separator"
 import Loading from "./elements/loading/loading"
-import StatBox from "./elements/stat_box/stat_box"
+import BoxContainer from "./elements/box_container/box_container"
 import SelectorPagination from "./elements/selector_pagination/selector_pagination"
 import Selector from "./elements/selector/selector"
 
@@ -35,7 +35,7 @@ function App (){
 
     return(
         <>
-        <Section background="White">
+        <Section background="Secondary">
 
            <Selector placeholder="Todas Categorias" options={options} onChange={handleSelection} />
 
@@ -48,8 +48,8 @@ function App (){
                 Tag
             </Tag>
 
-            <GridDisplay numberOfColumns={3} gap={0.1}>
-                <Card background="White" textAlign="Center" selectable={true}>
+            <GridDisplay columnWidths={["1fr", "2fr", "1fr"]} gap={0.1}>
+                <Card background="Transparent" textAlign="Center" selectable={true}>
                     <i style={{fontSize:"120px", color:"var(--c-primary)"}} class="fa-solid fa-house"></i>
                     <div style={{padding:"1rem 0"}}>
                         <h2 className="bul-outline-text">Card</h2>
@@ -57,7 +57,7 @@ function App (){
 
                     </div>
                 </Card>
-                <Card background="White" textAlign="Center" selectable={true}>
+                <Card background="Transparent" textAlign="Center" selectable={true}>
                     <i style={{fontSize:"120px", color:"var(--c-primary)"}} class="fa-solid fa-house"></i>
                     <div style={{padding:"1rem 0"}}>
                         <h2 className="bul-outline-text">Card</h2>
@@ -65,7 +65,7 @@ function App (){
 
                     </div>
                 </Card>
-                <Card background="White" textAlign="Center" selectable={true}>
+                <Card background="Transparent" textAlign="Center" selectable={true}>
                     <i style={{fontSize:"120px", color:"var(--c-primary)"}} class="fa-solid fa-house"></i>
                     <div style={{padding:"1rem 0"}}>
                         <h2 className="bul-outline-text">Card</h2>
@@ -80,10 +80,10 @@ function App (){
                 <p>Texto de la card</p>
             </Card>
 
-        <StatBox type="Primary" aspect="Outline" width={15}>
+        <BoxContainer type="Primary" aspect="Outline" width={15}>
             <h1>Card</h1>
             <p>Texto de la card</p>
-        </StatBox>
+        </BoxContainer>
         </Section>
 
         <SelectorPagination maxSlotNumber={5} slotSelected={selected} type="Primary" />
